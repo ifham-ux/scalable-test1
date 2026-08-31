@@ -1,0 +1,21 @@
+{
+  "name": "awsec1",
+  "version": "1.0.0",
+  "description": "assignment project",
+  "license": "ISC",
+  "author": "Ifham Fikri",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "dependencies": {
+    "date-fns": "^4.4.0",
+    "mysql2": "^3.24.2",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

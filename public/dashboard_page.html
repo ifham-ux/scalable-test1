@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <h1>Aplikasi Puisi</h1>
+
+    <h2>Dashboard</h2>
+
+    <hr>
+
+    <h2>Submit Puisi</h2>
+
+    <input
+        id="judul"
+        type="text"
+        placeholder="Judul"
+    >
+
+    <br><br>
+
+    <textarea
+        id="isi"
+        placeholder="Isi puisi"
+        rows="10"
+        cols="50"
+    ></textarea>
+
+    <br><br>
+
+    <input
+        id="kategori"
+        type="text"
+        placeholder="Kategori"
+    >
+
+    <br><br>
+
+    <input
+        id="keyword"
+        type="text"
+        placeholder="Keywords"
+    >
+
+    <br><br>
+
+    <button onclick="submitPuisi()">
+        Submit Puisi
+    </button>
+
+    <p id="puisiResult"></p>
+
+    <hr>
+
+    <h2>Daftar Puisi</h2>
+
+    <button onclick="daftarPuisi()">
+        Lihat Puisi
+    </button>
+
+    <ul id="puisiList"></ul>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
