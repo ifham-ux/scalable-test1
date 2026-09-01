@@ -107,33 +107,75 @@ async function submitPuisi() {
     });
 
     const data = await response.json();
-    document.getElementById("puisiResult").textContent = data.message;
+        if (data.success) {
+
+        document.getElementById("puisiResult").textContent =
+            data.message;
+
+        // Clear form
+        document.getElementById("judul").value = "";
+        document.getElementById("isi").value = "";
+        document.getElementById("kategori").value = "";
+        document.getElementById("keyword").value = "";
+
+        // Refresh poem list
+        await daftarPuisi();
+    }
 }
 
 async function daftarPuisi() {
-    const response = await fetch("/server?action=daftar_puisi", {
-        method: "GET",
-        headers: {
-            "Content-Type" : "application/json"
-        },
-        credentials: "same-origin",
-    });
+
+    const response = await fetch(
+        "/server?action=daftar_puisi",
+        {
+            method: "GET",
+            credentials: "same-origin"
+        }
+    );
 
     const data = await response.json();
-    const list = document.getElementById("puisiList");
+
+    const list =
+        document.getElementById("puisiList");
+
     list.innerHTML = "";
 
     if (!data.success) {
-        list.innerHTML = `<li>${data.message}</li>`;
+
+        list.innerHTML = `
+            <p class="puisi-error">
+                ${data.message}
+            </p>
+        `;
+
         return;
     }
 
-    data.data.forEach(
-        puisi => {
-            const item = document.createElement("li");
-            item.textContent = `${puisi.tgl_submit}` + `${puisi.judul}` + `${puisi.kategori}`;
+    data.data.forEach(puisi => {
 
-            list.appendChild(item);
-        }
-    );
+        const item =
+            document.createElement("div");
+
+        item.className = "puisi-item";
+
+        item.innerHTML = `
+            <div class="puisi-date">
+                ${puisi.tgl_submit}
+            </div>
+
+            <div class="puisi-title">
+                ${puisi.judul}
+            </div>
+
+            <div class="puisi-category">
+                ${puisi.kategori || "Tanpa kategori"}
+            </div>
+        `;
+
+        list.appendChild(item);
+    });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    daftarPuisi();
+});

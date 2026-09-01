@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* body or main background*/
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Google Sans', sans-serif;
+    color: #302d29;
+
+    background-image:
+        radial-gradient(
+            rgba(80, 70, 55, 0.16) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ededed
+        );
+
+    background-size:
+        18px 18px,
+        100% 100%;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -150px;
+    left: -100px;
+
+    background: rgba(184, 255, 198, 0.245);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    animation: fogMove 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    right: -120px;
+    bottom: -150px;
+
+    background: rgba(255, 251, 192, 0.5);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    animation: fogMoveReverse 15s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+@keyframes fogMove {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(180px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(300px, -30px) scale(0.95);
+    }
+}
+
+
+@keyframes fogMoveReverse {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-150px, -80px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-250px, 40px) scale(0.9);
+    }
+}
+
+
+/* Authentication card */
+
+#authentication {
+
+    width: 390px;
+
+    padding: 42px;
+
+    background: #fffdf7;
+
+    border: 1px solid #ded8c9;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(50, 45, 35, 0.12);
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   FORM TITLE
+   ========================= */
+
+#formTitle {
+
+    margin-top: 0;
+
+    margin-bottom: 28px;
+
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+
+    font-size: 40px;
+
+    color: #29251f;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+
+input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: none;
+
+    border-bottom: 2px solid #d8d0bf;
+
+    background: transparent;
+
+    font-size: 15px;
+
+    color: #302d29;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease;
+}
+
+
+input:focus {
+    font-family: 'Google Sans', sans-serif;
+
+    border-bottom-color: #756b5a;
+}
+
+
+input::placeholder {
+    font-family: 'Google Sans', sans-serif;
+
+    color: #9b9487;
+}
+
+
+
+/* =========================
+   MAIN BUTTON
+   ========================= */
+
+#submitButton {
+    font-family: 'Google Sans', sans-serif;
+
+    width: 100%;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #3f3a32;
+
+    color: #fffdf7;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+#submitButton:hover {
+
+    background: #29251f;
+}
+
+
+#submitButton:active {
+
+    transform: translateY(1px);
+}
+
+
+#result {
+
+    min-height: 20px;
+
+    margin: 8px 0 0;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #b9584e;
+}
+
+
+hr {
+
+    margin: 28px 0;
+
+    border: none;
+
+    border-top: 1px solid #e1dbce;
+}
+
+
+#toggleText {
+    font-family: 'Google Sans', sans-serif;
+
+  
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #777064;
+}
+
+
+#toggleButton {
+    font-family: 'Google Sans', sans-serif;
+
+
+    border: none;
+
+    background: transparent;
+
+    color: #403a32;
+
+    font-size: 14px;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+
+#toggleButton:hover {
+    align-items: center ;
+    color: #3f6c70;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.toggle-container p {
+    margin: 0;
+}
+
+
+
+@media (max-width: 500px) {
+
+    body > h1 {
+
+        top: 25px;
+
+        font-size: 26px;
+    }
+
+
+    #authentication {
+
+        width: calc(100% - 32px);
+
+        padding: 30px;
+    }
+}

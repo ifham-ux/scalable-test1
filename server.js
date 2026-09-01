@@ -75,6 +75,86 @@ const server = http.createServer(
             return;
         }
 
+        if (
+            req.method === "GET" &&
+            url.pathname === "/styleone.css"
+        ) {
+
+            const filePath =
+                path.join(
+                    __dirname,
+                    "public",
+                    "styleone.css"
+                );
+
+            fs.readFile(
+                filePath,
+                (error, content) => {
+
+                    if (error) {
+
+                        console.error(error);
+
+                        res.writeHead(404);
+
+                        res.end(
+                            "style.css not found"
+                        );
+
+                        return;
+                    }
+
+                    res.writeHead(200, {
+                        "Content-Type": "text/css"
+                    });
+
+                    res.end(content);
+                }
+            );
+
+            return;
+        }
+
+        if (
+            req.method === "GET" &&
+            url.pathname === "/styletwo.css"
+        ) {
+
+            const filePath =
+                path.join(
+                    __dirname,
+                    "public",
+                    "styletwo.css"
+                );
+
+            fs.readFile(
+                filePath,
+                (error, content) => {
+
+                    if (error) {
+
+                        console.error(error);
+
+                        res.writeHead(404);
+
+                        res.end(
+                            "style.css not found"
+                        );
+
+                        return;
+                    }
+
+                    res.writeHead(200, {
+                        "Content-Type": "text/css"
+                    });
+
+                    res.end(content);
+                }
+            );
+
+            return;
+        }
+
 
 
         if (

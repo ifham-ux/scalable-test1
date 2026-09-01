@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -10,67 +9,72 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Dashboard</title>
+    <title>Aplikasi Puisi</title>
+
+    <link rel="stylesheet" href="styletwo.css">
 </head>
 
 <body>
 
-    <h1>Aplikasi Puisi</h1>
+    <div class="dashboard">
 
     <h2>Dashboard</h2>
 
-    <hr>
+        <div class="dashboard-cards">
 
-    <h2>Submit Puisi</h2>
+            <!-- SUBMIT -->
+            <div class="dashboard-card">
 
-    <input
-        id="judul"
-        type="text"
-        placeholder="Judul"
-    >
+                <h2>Submission Form</h2>
 
-    <br><br>
+                <input
+                    id="judul"
+                    type="text"
+                    placeholder="Title"
+                >
 
-    <textarea
-        id="isi"
-        placeholder="Isi puisi"
-        rows="10"
-        cols="50"
-    ></textarea>
+                <textarea
+                    id="isi"
+                    placeholder="Content"
+                ></textarea>
 
-    <br><br>
+                <input
+                    id="kategori"
+                    type="text"
+                    placeholder="Category"
+                >
 
-    <input
-        id="kategori"
-        type="text"
-        placeholder="Kategori"
-    >
+                <input
+                    id="keyword"
+                    type="text"
+                    placeholder="Keywords"
+                >
 
-    <br><br>
+                <p id="puisiResult"></p>
 
-    <input
-        id="keyword"
-        type="text"
-        placeholder="Keywords"
-    >
 
-    <br><br>
+                <button
+                    id="submitButton"
+                    onclick="submitPuisi()"
+                >
+                    Submit Puisi
+                </button>
 
-    <button onclick="submitPuisi()">
-        Submit Puisi
-    </button>
+            </div>
 
-    <p id="puisiResult"></p>
 
-    <hr>
+            <!-- LIST -->
+            <div class="dashboard-card">
 
-    <h2>Daftar Puisi</h2>
+                <h2>Submitted Poem</h2>
 
-    <button onclick="daftarPuisi()">
-        Lihat Puisi
-    </button>
+                <div id="puisiList"></div>
 
-    <ul id="puisiList"></ul>
+            </div>
+
+        </div>
+
+    </div>
 
     <script src="app.js"></script>
 

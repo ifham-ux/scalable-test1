@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Google Sans', sans-serif;
+    color: #302d29;
+
+    background-image:
+        radial-gradient(
+            rgba(80, 70, 55, 0.16) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ffffff
+        );
+
+    background-size:
+        18px 18px,
+        100% 100%;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* =========================
+   DASHBOARD
+   ========================= */
+
+.dashboard {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 30px 50px;
+}
+
+
+/* Dashboard title */
+
+.dashboard > h2 {
+    margin: 0 0 28px;
+
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #29251f;
+}
+
+
+/* =========================
+   DASHBOARD CARDS
+   ========================= */
+
+.dashboard-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+}
+
+.dashboard-card {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 0;
+    max-width: none;
+    padding: 30px;
+
+    background: #fffdf7;
+    border: 1px solid #ded8c9;
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(50, 45, 35, 0.12);
+}
+
+/* =========================
+   CARD TITLE
+   ========================= */
+
+.dashboard-card h2 {
+    margin: 0 0 24px;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #29251f;
+}
+
+
+/* =========================
+   DASHBOARD INPUTS
+   ========================= */
+
+.dashboard-card input,
+.dashboard-card textarea {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 13px 14px;
+    margin-bottom: 18px;
+
+    border: none;
+    border-bottom: 2px solid #d8d0bf;
+
+    background: transparent;
+
+    font-family: 'Google Sans', sans-serif;
+    font-size: 15px;
+
+    color: #302d29;
+
+    outline: none;
+
+    resize: vertical;
+
+    box-sizing: border-box;
+}
+
+.dashboard-card textarea {
+    min-height: 180px;
+    max-height: 300px;
+}
+
+
+
+.dashboard-card input:focus,
+.dashboard-card textarea:focus {
+    border-bottom-color: #756b5a;
+}
+
+
+.dashboard-card input::placeholder,
+.dashboard-card textarea::placeholder {
+    color: #9b9487;
+}
+
+
+/* =========================
+   DASHBOARD BUTTONS
+   ========================= */
+
+#submitButton {
+    width: 100%;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #3f3a32;
+
+    color: #fffdf7;
+
+    font-family: 'Google Sans', sans-serif;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+#submitButton:hover {
+    background: #29251f;
+}
+
+
+#submitButton:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================
+   PUISI RESULT
+   ========================= */
+
+#puisiResult {
+    min-height: 20px;
+
+    margin: 10px 0 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #b9584e;
+}
+
+
+/* =========================
+   PUISI LIST
+   ========================= */
+
+/* =========================
+   PUISI LIST
+   ========================= */
+
+/* =========================
+   POEM LIST CONTAINER
+   ========================= */
+
+#puisiList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-top: 24px;
+
+    /* Scroll */
+    max-height: 450px;
+    overflow-y: auto;
+
+    /* Give scrollbar some breathing room */
+    padding-right: 8px;
+}
+
+
+/* =========================
+   PUISI ITEM
+   ========================= */
+
+.puisi-item {
+    width: 100%;
+
+    padding: 18px 20px;
+
+    background: #fffdf7;
+
+    border: 1px solid #ded8c9;
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(50, 45, 35, 0.07);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.puisi-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(50, 45, 35, 0.11);
+}
+
+
+/* =========================
+   DATE
+   ========================= */
+
+.puisi-date {
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    color: #9b9487;
+}
+
+
+.puisi-title {
+    margin-bottom: 9px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #29251f;
+}
+
+
+.puisi-category {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    border-radius: 5px;
+
+    background: #f0ebe0;
+
+    color: #756b5a;
+
+    font-size: 12px;
+}
+
+/* =========================
+   DASHBOARD MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 80px 20px 40px;
+    }
+
+    .dashboard-cards {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .dashboard-card {
+        flex: 1 1 0;
+        min-width: 0;
+        width: 0;
+        max-width: none;
+        padding: 30px;
+
+        background: #fffdf7;
+        border: 1px solid #ded8c9;
+        border-radius: 14px;
+
+        box-shadow:
+            0 10px 30px
+            rgba(50, 45, 35, 0.12);
+    }
+
+}
